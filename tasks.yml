@@ -1,0 +1,21 @@
+---
+
+- name: "Read a file content"
+  shell: |
+    cat /tmp/test.sh
+  register: file_content
+
+- name: "Print the file content to a console"
+  debug:
+    #  var: file_content.stdout_lines
+    msg: "{{ file_content.stdout_lines }}" 
+
+- name: save file to another_file file
+  set_fact:
+    another_file: "{{ file_content.stdout_lines }}"
+
+- name: "Print the file content to a console"
+  debug:
+    #  var: another_file.stdout_lines
+    msg: "{{ another_file }}"
+

@@ -1,0 +1,10 @@
+---
+
+- name: read file
+  ansible.builtin.cat:
+    path: /tmp/test.sh
+  register: file_contents
+
+- name: display file
+  ansible.builtin.debug:
+    var: file_contents.stdout_lines

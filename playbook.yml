@@ -1,0 +1,6 @@
+---
+- name: Main play book
+  hosts: target1
+  tasks:
+    - name: import tasks
+      import_tasks: tasks.yml
